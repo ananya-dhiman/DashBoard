@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Oswald", sans-serif;
     line-height: 1.5;
     font-weight: 400;
   
@@ -14,7 +15,7 @@
   }
 .header{
   width:100%;
-  background-color: lightsalmon;
+  background-color: white;
   height:115px;
   display: flex;
   justify-content: center;
@@ -22,7 +23,7 @@
 
 }
 .h1{
-  color: #333;
+  color:#295061;
   text-align: center;
   font-size:50px;
   font-weight: 800;
@@ -31,23 +32,44 @@
 
 .body {
   display: flex;
-  justify-content: space-between;
-
-  align-items:flex-start;
-  margin:auto;  
-  background-color: #242424;
+  justify-content: center;
+  align-self: center;
+  background-color:#295061;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+.main{
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+  margin:0;
+
+  
+  /* background: rgba(42, 116, 116, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px; 
+  overflow: hidden;  */
+}
+
+
+img{
+  flex:1;
+  width:85%;
+  height: 100%;
+  z-index:-1;
+  opacity:0.7;
+
+
+}
   .inputs{
+
     display:flex;
     flex-flow: column;
-    margin-top: 25px;
-    margin-right: 0; 
-    width:45%;
+    gap:30px;
     padding:10px;
-  
-    align-self: center;
     align-items: center;
     justify-content: center;
     
@@ -57,6 +79,7 @@
  
   input{
     padding: 5px;
+    
     
   }
 
@@ -77,7 +100,7 @@
   }
   label,input{
 
-    margin:5px;
+    margin:15px;
   }
 
   .f1 p,
@@ -86,8 +109,11 @@
   {
     font-size: 24px;
     font-weight: 800;
-    color:lightsalmon;
+    color:white;
     text-align: center;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  
   }
 
 
@@ -124,111 +150,28 @@
   resize: none;
 }
 
-/* CV Display section */
-.cvdisplay {
-  width:45%;
-  margin-right:300px;
-  margin-top:150px;
-  border-left: 2px solid #ddd;
-  margin-left: 0;
-  padding: 20px;
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-.cvdisplay .o1,
-.cvdisplay .o2,
-.cvdisplay .o3 {
-  margin-bottom: 20px;
-}
-
-#color{
-  
-  
-  border-radius: 8px;
-  width: 100%;
-  text-align: center;
-  
- 
-}
-
-#head{
-
- display: flex;
- text-align: center;
- justify-content: center;
- align-items: center;
-
-}
-#head p{
-  color: black;
-  font-size: 15px;
-  text-align: center;
-  font-weight: bold;
-  
-  
-}
-#name p{
-  color:lightsalmon;
-  font-size: 35px;
-  font-weight: 800;
-  
-
-}
-
-.cvdisplay h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #555;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
-
-.cvdisplay p {
-  margin: 5px 0;
-  font-size: 14px;
-  color: #333;
-}
-
-
-
-#head p::before{
-  content: "|";
-  left: 0;
-  color: #555;
-}
-
-/* CV-like appearance */
-.cvdisplay {
-  background-color: #fafafa;
+button{
+  outline:none;
+  border:none;
+  width:250px;
+  height:50px;
   border-radius: 10px;
-  box-shadow: 0 0 10px grey;
-}
-
-.cvdisplay h3 {
-  font-size: 20px;
-  color: #333;
-}
-
-.cvdisplay p {
+  background-color: #b8fdff;
+  justify-self: center;
+  text-align: center;
+  color:#295061;
+  font-weight: 700;
   font-size: 16px;
-  color: #444;
+  cursor:pointer;
 
+  
 }
-
-.cvdisplay .o1 {
-  margin-bottom: 30px;
-}
-
-.cvdisplay .o2,
-.cvdisplay .o3 {
-  margin-bottom: 20px;
-}
-
-.cvdisplay .o1 p {
-  font-size: 18px;
-}
-
-
-.cvdisplay .o2 p,
-.cvdisplay .o3 p {
-  padding-left: 0;
+button:hover{
+  opacity:0.7;
 }

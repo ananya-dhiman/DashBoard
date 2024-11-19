@@ -1,166 +1,107 @@
 import './styles/input.css'
 import { useImmer } from 'use-immer';
 import {obj} from './Obj';
-
+import side from "./assets/side.jpg";
 
 export function Input() {
   console.log("Input component rendered");
   
-  
+  const AgeArray=Array.from({length:150},function(_,index){
+    return index+1;
+  })
   const {inputValues, handleChange}=obj();
   
     return (
         <>
         <div className="header">
-          <p className='h1'>RESUME-BUILDER</p>
+          <p className='h1'>HEALTHIFY</p>
         </div>
         <div className="body">
+          <div className="main">
+          <div className="image">
+            <img src={ side}/>
+
+          </div>
          <div className="inputs">
+          <div className='circle'>
+         <div className="c1">
+
+</div>
+<div className="c1">
+  
+</div>
+<div className="c1">
+  
+</div>
+</div>
           <div className="f1">
-            <p>About</p>
+            <p>USER DETAILS</p>
+  
             <label>First Name</label>
             <input type="text"
           
-             value={inputValues.About.fname}
-             onChange={(e)=>(handleChange(e,"About fname"))}
+             value={inputValues.fname}
+             onChange={(e)=>(handleChange(e,"fname"))}
             
             />
             <label>Last Name</label>
             <input type="text" 
      
-            value={inputValues.About.lname}
-            onChange={(e)=>(handleChange(e,"About lname"))}
+            value={inputValues.lname}
+            onChange={(e)=>(handleChange(e,"lname"))}
             />
             <label>Email</label>
             <input type="email"
       
-            value={inputValues.About.email}
-            onChange={(e)=>(handleChange(e,"About email"))}
+            value={inputValues.email}
+            onChange={(e)=>(handleChange(e,"email"))}
             />
-            <label>Phone Number</label>
-            <input type="tel"  
-           
-            value={inputValues.About.phone}
-            onChange={(e)=>(handleChange(e,"About phone"))}
-            />
-            <label>Address</label>
-            <input type="text" 
-           
-            value={inputValues.About.add}
-            onChange={(e)=>(handleChange(e,"About add"))}
-            />
-          </div>
-          <div className="f2">
-            <p>Education</p>
-            <label>School</label>
-            <input type="text" 
-            n="Education school"
-            value={inputValues.Education.school}
-            onChange={(e)=>(handleChange(e,"Education school"))}
-            />
-            <label>University</label>
-            <input type="text"  
-        
-            value={inputValues.Education.uni}
-            onChange={(e)=>(handleChange(e,"Education uni"))}
-            />
-            <label>Start Year</label>
-            <input  
-      
-            value={inputValues.Education.start}
-            onChange={(e)=>(handleChange(e,"Education start"))} 
-            />
-            <label>End Year</label>
-            <input   
-     
-            value={inputValues.Education.end}
-            onChange={(e)=>(handleChange(e,"Education end"))}
-            />
-          </div>
-          <div className="f3">
-            <p>Experience</p>
-            <label>Company</label>
-            <input type="text" 
-       
-            value={inputValues.Experience.job}
-            onChange={(e)=>(handleChange(e,"Experience job"))}
-            />
-            <label>Position</label>
-            <input type="text" 
-
-            value={inputValues.Experience.pos}
-            onChange={(e)=>(handleChange(e,"Experience pos"))}
-            />
-            <label>Start Date</label>
-            <input type="date" 
-       
-            value={inputValues.Experience.start}
-            onChange={(e)=>(handleChange(e,"Experience start"))}
-            />
-            <label>End Date</label>
-            <input type="date" 
-          
-            value={inputValues.Experience.end}
-            onChange={(e)=>(handleChange(e,"Experience end"))}
-            />
-            <label>Description</label>
-            <textarea
-           
-            value={inputValues.Experience.des}
-            onChange={(e)=>(handleChange(e,"Experience des"))}
-            />
-          </div>
-         
-        </div> 
-        <div className="cvdisplay">
-        <div className="o1">
-          <div id="color">
-          <div id='name'>
-          <p>{inputValues.About.fname}<span></span> {inputValues.About.lname}</p> 
-         
-          </div>
-
-            <div id='head'>
-            <p>{inputValues.About.email}</p>
+            <label>Select Age</label>
             
-            <p>{inputValues.About.phone}</p>          
+            <input
+            id="age"
+            type="number"
+            onChange={(e)=>(handleChange(e,"age"))}
+            placeholder="Enter Age"
+            list="age-select" 
+      />
+      <datalist id="age-select">
+      {AgeArray.map((age)=>(
+              <option >{age}</option>
+            )
 
-            <p>{inputValues.About.add}</p>
-        </div>   
+            )
+
+              
+              
+          }
+        </datalist>
+
+        <label for="file" class="file-label">
+          Upload File
+    </label>
+
+        <input
+        className='file'
+         name="file"
+          type="file" 
+          id="file"
+          
+          />
+
+          
+
+  
+           
+          </div>
+          <button>Submit</button>
+          
+  
+
+          </div>
 
         </div>
-         
-         
-        </div> 
-        <div className="o2">
-            <h3>Education</h3>
-          
-            
-            <p>{inputValues.Education.school}</p>          
 
-            <p>{inputValues.Education.uni}</p>
-
-            <p>{inputValues.Education.start}</p>     
-            <p>{inputValues.Education.end}</p>    
-         
-        </div> 
-        <div className="o3">
-          <h3>Experience</h3>
-            
-            <p>{inputValues.Experience.job}</p>
-            
-            <p>{inputValues.Experience.pos}</p>          
-
-            <p>{inputValues.Experience.start}</p>
-
-            <p>{inputValues.Experience.end}</p>     
-            <p>{inputValues.Experience.des}</p>    
-         
-        </div> 
-        
-
-
-        </div>
       </div>
         </>
       );
