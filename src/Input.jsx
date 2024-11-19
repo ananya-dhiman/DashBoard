@@ -23,17 +23,8 @@ export function Input() {
 
           </div>
          <div className="inputs">
-          <div className='circle'>
-         <div className="c1">
 
-</div>
-<div className="c1">
-  
-</div>
-<div className="c1">
-  
-</div>
-</div>
+
           <div className="f1">
             <p>USER DETAILS</p>
   
